@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: white;
+        color: #25272e;
+    }
+    header{
+       background-color: #25272e;
+       padding: 20px;
+    }
+    header > h1{
+        color: white;
+        text-align: center;
+        font-family: cursive;
+    }
+  
+    .scoreboard{
+        border: 4px solid black;
+        width: 200px;
+        margin: 10px auto;
+        font-size: 46px;
+        border-radius: 10px;
+        text-align: center;
+        padding: 15px 20px;
+        font-family: sans-serif;
+        position: relative;
+    }
+    .badge{
+        background-color: #e25840;
+        font-size: 14px;
+        padding: 2px 10px;
+        font-family: sans-serif;
+        border-radius: 10px;
+    }
+    #user__label{
+        position: absolute;
+        color: white;
+        top: 30px;
+        left: -27px;
+        font-size: 15px;
+    }
+    #computer__label{
+        position: absolute;
+        top: 30px;
+        color: white;
+        left: 165px;
+        font-size: 15px;
+    }
+    .result{
+        font-size: 40px;
+    }
+    .result >p{
+       text-align: center;
+       font-family: sans-serif;
+       font-weight: bold;
+    }
+    .choices{
+        margin: 20px 0;
+        text-align: center;
+    }
+    .choice{
+        display: inline-block;
+        border-radius: 50%;
+        border: 4px solid #25272e;
+        padding: 10px;
+        margin: 0 15px;
+    }
+    img{
+        width: 80px;
+        height: 80px;
+    }
+    .choice:hover{
+        cursor: pointer;
+    }
+    #action__message{
+        text-align: center;
+        color: #25272e;
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+
+    <div class="scoreboard">
+        <div id="user__label" class="badge">User</div>
+        <div id="computer__label" class="badge">Comp</div>
+        <span id="user__score">0</span>:<span id="computer__score">0</span>
+    </div>
+
+    <div class="result">
+        <p>You Win!</p>
+    </div>
+
+    <div class="choices">
+        <div id="r" class="choice">
+            <img src="https://res.cloudinary.com/itsellej/image/upload/v1533400140/rock-paper-scissors/rock.png" alt="rock">
+        </div>
+        <div id="p" class="choice">
+            <img src="https://res.cloudinary.com/itsellej/image/upload/v1533400143/rock-paper-scissors/paper.png" alt="paper">
+        </div>
+        <div id="s" class="choice">
+            <img src="https://res.cloudinary.com/itsellej/image/upload/v1533400144/rock-paper-scissors/scissors.png" alt="scissors">
+        </div>
+    </div>
+    <p id="action__message">Make Your Move </p>
+</body>
+<script>
+   let  user_score = 0;
+   let  computer_score = 0;
+   const user_score_span = document.getElementById('user__score')
+   const computer_score_span = document.getElementById('computer__score')
+   const score_board = document.querySelector('.scoreboard')
+   const result = document.querySelector('.result >p')
+   const rock = document.getElementById('r')
+   const paper = document.getElementById('p')
+   const scissors = document.getElementById('s')
+
+   function getComputerChoice(){
+     const choices = ['r','p','s']
+     const randomNumber =  Math.floor(Math.random()*3)
+     return choices[randomNumber]
+   }
+   function win(){
+     user_score++
+     user_score_span.innerHTML = user_score
+     result.innerHTML = 'You Win!'
+   }
+   function lose(){
+     computer_score++
+     computer_score_span.innerHTML = computer_score
+     result.innerHTML = 'You Lose!'
+   }
+   function draw(){
+     result.innerHTML = `It's a Draw!`
+   }
+  function game(userChoice){
+    const computerChoice = getComputerChoice()
+    switch(userChoice + computerChoice){
+        case 'rs':
+        case 'sp':
+        case 'pr':
+            win()
+            break
+        case 'sr':
+        case 'ps':
+        case 'rp':
+            lose()
+            break   
+        case 'rr':
+        case 'pp':
+        case 'ss':
+            draw()
+            break                                  
+    }
+  }
+
+  function main(){
+    rock.addEventListener('click',()=>{
+      game('r')
+   })
+   paper.addEventListener('click',()=>{
+     game('p')
+   })
+   scissors.addEventListener('click',()=>{
+     game('s')
+   })
+ }
+ main()
+</script>
+</html>
