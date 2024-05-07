@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // create a div element using javscript 
+    const div = document.createElement("div")
+    div.className = "main"
+    div.id = Math.floor(Math.random() * 10 + 1)
+    div.style.backgroundColor = "Orange" 
+    div.style.padding = "12px" 
+    const add_text = document.createTextNode("Chai aur code")
+    div.appendChild(add_text)
+    document.body.appendChild(div)
+    // console.log(div)
+
+    function add_language (lang_name) {
+        const li = document.createElement("li")
+        li.innerHTML = lang_name 
+        document.querySelector(".language").appendChild(li)
+    }
+    add_language("Typescript")
+    add_language("Python")
+
+    function add_language_optimize (lang_name) {
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(lang_name))
+        document.querySelector(".language").appendChild(li)
+    }
+
+    add_language_optimize("GoLang")
+
+    // Edit 
+
+    const second_lang = document.querySelector("li:nth-child(2)")
+    const new_li = document.createElement("li")
+    new_li.appendChild(document.createTextNode("C++"))
+    second_lang.replaceWith(new_li)
+
+    const first_lang = document.querySelector("li:first-child")
+    const first_new_li = document.createElement("li")
+    first_new_li.appendChild(document.createTextNode("Typescript"))
+    first_lang.replaceWith(first_new_li)
+
+    // remove 
+
+    const last_lang = document.querySelector("li:last-child")
+    last_lang.remove()
+
+</script>
+</html>

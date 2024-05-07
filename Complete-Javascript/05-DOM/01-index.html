@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: black; color: white;">
+    <div class="bg-black">
+        <h1 id="title" class="heading">DOM Learning on Chai aur Code <span style="display: none;">Test-Text</span> </h1>
+        <h2>This is a heading 2</h2>
+        <h2>This is second heading 2</h2>
+        <h2>This is third heading 2</h2>
+        <p>This is a Javscript learning practice </p>
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+    </div>
+</body>
+<script>
+    const heading = document.getElementById("title")
+    console.log(heading.id)
+    console.log(heading.className)
+    // console.log(heading.setAttribute("class" , "test"))
+    heading.style.backgroundColor = "orange"
+    heading.style.padding = "15px"
+    heading.style.borderRadius = "5px"
+
+    console.table([heading.textContent, heading.innerHTML ,heading.innerText])
+    
+    const title = document.getElementsByClassName("heading")
+    // this gives a html collection 
+    // console.log(title)
+
+    const h1 = document.querySelector("h1")
+    // console.log(h1)
+
+    const all_heading = document.querySelectorAll("h2")
+    // this gives a nodelist 
+    // console.log(all_heading)
+
+    const first_un_list = document.querySelector("ul")
+    const first_list =  first_un_list.querySelector("li")
+    
+    first_list.style.backgroundColor = "red"
+    first_list.style.padding = "5px"
+    first_list.innerText = "This is dom manipulation"
+    first_list.style.borderRadius = "20px"
+    first_un_list.style.listStyle = "none"
+
+
+    const all_un_list = document.querySelectorAll("ul")
+    
+    all_un_list.forEach((item)=>{
+        item.style.color = "yellow"
+    })
+    
+    // const arr = Array.from(all_un_list) // this will convert the nodelist to array 
+    
+</script>
+</html>
