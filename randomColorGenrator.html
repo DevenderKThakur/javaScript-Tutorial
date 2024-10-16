@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color</title>
+</head>
+<body>
+    <div>
+        <button id="hex-color">Hex-color</button>
+        <button id="rgb-color">RGB-color</button>
+        <h3>Random Color</h3>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+</body>
+<script>
+
+    let intervalId
+
+    let choice = 1 
+
+    document.getElementById("hex-color").addEventListener("click" , function () {
+        choice = 1 
+    } , false)
+
+    document.getElementById("rgb-color").addEventListener("click" , function () {
+        choice = 0
+    } , false)
+
+    function randomColorInRGB (maxhexValue) {
+        return Math.floor(Math.random() * 255)
+    }
+
+    function randomColorInHex () {
+        const hex = "0123456789ABCDEF"
+        let color = "#"
+        for (let index = 0 ; index < 6 ; index ++) {
+            color += hex[Math.floor(Math.random() * 16)]
+        }
+        return color
+    }
+
+
+    function changeBgColor () {
+        if (!intervalId) {
+            intervalId = setInterval (function () {
+                let randomBgColor = null 
+
+                if (choice === 0) {
+                    randomBgColor = `rgb(${randomColorInRGB(255)} , ${randomColorInRGB(255)} , ${randomColorInRGB(255)})`
+                }else {
+                    randomBgColor = randomColorInHex()
+                }
+
+                document.body.style.backgroundColor = randomBgColor
+
+                document.querySelector("h3").textContent = randomBgColor
+
+            } , 1000)
+        }
+    }
+
+    function stopchangeBgColor () {
+        clearInterval(intervalId)
+        intervalId = null
+    }
+
+
+    document.getElementById("start").addEventListener("click" , changeBgColor , false)
+
+
+    document.getElementById("stop").addEventListener("click" , stopchangeBgColor , false)
+
+    
+</script>
+</html>
