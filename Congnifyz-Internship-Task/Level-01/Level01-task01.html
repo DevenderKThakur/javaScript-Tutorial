@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Level_01-Task_01</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="w-full min-h-screen font-mono p-3">
+      <!-- Navbar -->
+      <div class="w-full h-20 flex flex-row justify-between items-center p-2">
+        <div class="w-48 h-full ml-10">
+          <img
+            src="https://cognifyz.com/wp-content/uploads/2023/11/cognifyz-1.png"
+            alt=""
+            class="object-contain w-full h-full object-center"
+          />
+        </div>
+        <div
+          class="flex felx-row justify-between items-center min-w-64 p-2 font-medium text-xl"
+        >
+          <p class="hover:text-orange-600 px-3 py-2">
+            <a href="https://cognifyz.com/" target="_blank">Home</a>
+          </p>
+          <p class="hover:text-orange-600 px-3 py-2">
+            <a href="https://cognifyz.com/about-us/" target="_blank">About</a>
+          </p>
+          <p class="hover:text-orange-600 px-3 py-2">
+            <a href="https://cognifyz.com/contact-us/" target="_blank"
+              >Contact</a
+            >
+          </p>
+        </div>
+        <div class="w-64">
+          <button class="mr-5 font-medium text-xl hover:text-orange-600">
+            Login
+          </button>
+          <button
+            class="bg-orange-600 text-white font-semibold text-xl py-2 px-3 rounded-xl active:scale-90 hover:bg-orange-500 transition-all"
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+      <!-- Content with a heading a para and an image -->
+      <div
+        class="w-screen h-[400px] p-4 flex flex-col items-center text-center space-y-3 bg-[url('https://media.gettyimages.com/id/1370929377/photo/close-up-of-computer-programmer-coding.jpg?s=612x612&w=0&k=20&c=vloBHkwB8k5_YK3Mt_5BolntTmjRqOgkAK531ys3hko=')] bg-cover bg-center text-white mb-5"
+      >
+        <h1 class="text-3xl font-bold bg-black bg-opacity-50 px-2 py-1 rounded">
+          Transforming the way of <span id="text">Education</span>
+        </h1>
+        <p
+          class="text-gray-200 bg-black bg-opacity-50 px-3 py-1 rounded italic"
+        >
+          "Face challenges as opportunities, much like Cognifyz Technologies
+          navigates innovation. With determination and belief in your potential,
+          every hurdle becomes a stepping stone to success."
+        </p>
+      </div>
+
+      <!-- Single input box with a submit button  -->
+      <div class="w-full h-[150px] flex justify-center items-center">
+        <div
+          class="w-[400px] h-[100px] flex flex-row justify-center items-center"
+        >
+          <input
+            type="text"
+            placeholder="Enter your name "
+            class="font-mono py-2 px-3 rounded-xl border-2 border-orange-600 outline-none placeholder:text-orange-600 text-orange-600"
+          />
+          <button
+            class="bg-orange-600 text-white font-semibold text-xl py-2 px-3 rounded-xl active:scale-90 hover:bg-orange-500 transition-all ml-2"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const textChange = document.querySelector("#text");
+    setInterval(() => {
+      if (textChange.textContent === "Education") {
+        textChange.textContent = "Learning";
+      } else {
+        textChange.textContent = "Education";
+      }
+    }, 2000);
+  </script>
+</html>

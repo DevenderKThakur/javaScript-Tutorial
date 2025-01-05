@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Level_01-Task_02</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="w-full min-h-screen flex justify-center items-center flex-col">
+      <!-- Change Color Button -->
+      <button
+        class="py-2 px-3 bg-red-700 text-white rounded-xl font-mono text-xl font-medium active:scale-95 hover:opacity-70 mb-5"
+        id="btn"
+      >
+        Click Me
+      </button>
+      <!-- Greeting Message according to time  -->
+      <div>
+        <button
+          class="py-2 px-3 bg-pink-600 text-white rounded-xl font-mono text-xl font-medium active:scale-95 hover:opacity-70 mb-5 border-2"
+          id="btnGreetMe"
+        >
+          Greeting Message
+        </button>
+      </div>
+      <!-- Calculate when user enters two value  -->
+      <div
+        class="flex flex-col justify-center items-center p-6 bg-pink-600 rounded-xl w-[250px] h-[250px]"
+      >
+        <input
+          type="text"
+          placeholder="Enter the first value"
+          class="py-2 px-3 mb-2 outline-none rounded-xl shadow-2xl border-red-500 border-2 placeholder:text-orange-600 text-orange-600"
+          id="firstval"
+        />
+        <input
+          type="text"
+          placeholder="Enter the second value"
+          class="py-2 px-3 mb-2 outline-none rounded-xl shadow-2xl border-red-500 border-2 placeholder:text-orange-600 text-orange-600"
+          id="secondval"
+        />
+        <p class="p-2 font-mono font-semibold text-white text-center">
+          Result : <span id="result"></span>
+        </p>
+        <button
+          class="bg-yellow-500 text-white py-2 px-3 w-full rounded-xl font-semibold mt-2"
+          id="btnCalculate"
+        >
+          Calculate
+        </button>
+      </div>
+    </div>
+  </body>
+  <script>
+    const btnClickMe = document.querySelector("#btn");
+
+    const btnGreetMe = document.querySelector("#btnGreetMe");
+
+    const btnCalculate = document.getElementById("btnCalculate");
+
+    const result = document.getElementById("result");
+
+    btnClickMe.addEventListener("click", () => {
+      btnClickMe.classList.remove("bg-red-700");
+      btnClickMe.classList.add("bg-blue-700");
+    });
+
+    btnGreetMe.addEventListener("click", () => {
+      const date = new Date();
+      if (date.getHours() < 12) {
+        alert("Good Morning");
+      } else if (date.getHours() < 17) {
+        alert("Good Afternoon");
+      } else if (date.getHours() < 20) {
+        alert("Good Evening");
+      } else {
+        alert("Good Night");
+      }
+    });
+
+    btnCalculate.addEventListener("click", () => {
+      const firstval = document.getElementById("firstval").value.trim();
+      const secondval = document.getElementById("secondval").value.trim();
+
+      if (firstval === "" || secondval === "") {
+        alert("Enter both value before calculating");
+      } else if (isNaN(Number(firstval)) || isNaN(Number(secondval))) {
+        alert("Enter valid number before calculating");
+      } else {
+        result.textContent = Number(firstval) + Number(secondval);
+      }
+    });
+  </script>
+</html>

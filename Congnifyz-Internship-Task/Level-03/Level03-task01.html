@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Level-03_task-01</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Image Slider  -->
+    <div
+      class="bg-zinc-900 flex flex-row justify-center items-center w-full min-h-screen"
+    >
+      <!-- arrow-left button -->
+      <button
+        class="w-10 h-10 mr-10 bg-white p-2 rounded-full active:scale-90 transition-all"
+        id="leftbtn"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+          />
+        </svg>
+      </button>
+      <!-- image slider content -->
+      <div
+        class="border-4 w-[500px] h-[400px] active:scale-110 cursor-pointer transition-all"
+      >
+        <img
+          src="https://media.istockphoto.com/id/471296532/photo/planet-earth-at-night.jpg?s=612x612&w=0&k=20&c=n-9GMF-nYTuZJ5z6oc7sCo8MagfPlx2JeK-4visym_E="
+          alt=""
+          class="w-full h-full object-cover object-center"
+          id="themeImage"
+        />
+      </div>
+      <!-- arrow-roght button -->
+      <button
+        class="w-10 h-10 ml-10 bg-white p-2 rounded-full active:scale-90 transition-all"
+        id="rightbtn"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+          />
+        </svg>
+      </button>
+    </div> 
+    <!-- Image Gallery  -->
+    <div class="w-full bg-orange-500 h-[400px] flex justify-center items-center p-6">
+      <div class="w-[300px] h-[300px] p-5 border-2 mr-3">
+        <img src="https://media.istockphoto.com/id/471296532/photo/planet-earth-at-night.jpg?s=612x612&w=0&k=20&c=n-9GMF-nYTuZJ5z6oc7sCo8MagfPlx2JeK-4visym_E=" alt="" class="w-full h-full object-cover object-center active:scale-110 cursor-pointer transition-all shadow-2xl">
+      </div>
+      <div class="w-[300px] h-[300px] p-5 border-2  mr-3">
+        <img src="https://img.freepik.com/free-photo/ultra-detailed-nebula-abstract-wallpaper-4_1562-749.jpg?semt=ais_hybrid" alt="" class="w-full h-full object-cover object-center active:scale-110 cursor-pointer transition-all shadow-2xl">
+      </div>
+      <div class="w-[300px] h-[300px] p-5 border-2  mr-3">
+        <img src="https://cdn.cnn.com/cnn/interactive/2022/12/world/best-space-photos-2022/media/images/webb-13-07-july-Star-Forming-Region-MAIN-IMAGE---Carina.jpg" alt="" class="w-full h-full object-cover object-center active:scale-110 cursor-pointer transition-all shadow-2xl">
+      </div>
+      <div class="w-[300px] h-[300px] p-5 border-2">
+        <img src="https://i0.wp.com/www.sciencenews.org/wp-content/uploads/2022/11/Pillars-of-Creation-Infrared.jpg?resize=1500,1406&ssl=1" alt="" class="w-full h-full object-cover object-center active:scale-110 cursor-pointer transition-all shadow-2xl">
+      </div>
+    </div>
+  </body>
+  <script>
+    const imgsrc = [
+      "https://media.istockphoto.com/id/471296532/photo/planet-earth-at-night.jpg?s=612x612&w=0&k=20&c=n-9GMF-nYTuZJ5z6oc7sCo8MagfPlx2JeK-4visym_E=",
+      "https://img.freepik.com/free-photo/ultra-detailed-nebula-abstract-wallpaper-4_1562-749.jpg?semt=ais_hybrid",
+      "https://cdn.cnn.com/cnn/interactive/2022/12/world/best-space-photos-2022/media/images/webb-13-07-july-Star-Forming-Region-MAIN-IMAGE---Carina.jpg",
+      "https://i0.wp.com/www.sciencenews.org/wp-content/uploads/2022/11/Pillars-of-Creation-Infrared.jpg?resize=1500,1406&ssl=1",
+    ];
+    const leftbtn = document.getElementById("leftbtn");
+    const rightbtn = document.getElementById("rightbtn");
+    const themeImage = document.getElementById("themeImage");
+    let index = 0;
+
+    function moveImageLeft() {
+      index -= 1;
+      if (index < 0) {
+        index = imgsrc.length - 1;
+      }
+      themeImage.src = imgsrc[index];
+    }
+
+    function moveImageRight() {
+      index += 1;
+      if (index === imgsrc.length) {
+        index = 0;
+      }
+      themeImage.src = imgsrc[index];
+    }
+
+    rightbtn.addEventListener("click", moveImageRight);
+    leftbtn.addEventListener("click", moveImageLeft);
+  </script>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Developer Internship</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="w-full min-h-screen py-6 px-20 bg-[#f6f7fe] flex flex-col items-center"
+    >
+      <div class="flex flex-row justify-between items-center w-full h-[100px]">
+        <a href="./Level03-task02.html">
+          <img
+          src="https://cognifyz.com/wp-content/uploads/2023/11/cognifyz-1.png"
+          alt="main-logo"
+          class="ml-5"
+        />
+        </a>
+        <div class="w-[400px] h-full flex flex-row p-6 mr-5">
+          <div class="w-12 p-3 h-12 mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+              />
+            </svg>
+          </div>
+          <div>
+            <p>Email</p>
+            <p class="font-semibold hover:text-orange-600">
+              <a href="mailto:cognifyztechnologies@gmail.com"
+                >cognifyztechnologies@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Accordian Info -->
+      <div
+        class="w-full max-w-1/2 bg-pink-600 rounded-lg shadow-md mt-10 font-mono text-white p-6"
+      >
+        <div class="accordion">
+          <!-- Accordion Item 1 -->
+          <div class="mb-2 border-b">
+            <button
+              class="w-full flex justify-between items-center py-2 px-4 focus:outline-none hover:bg-pink-500"
+              onclick="toggleAccordion(0)"
+            >
+              <span class="text-lg font-medium"
+                >Info about Cognifyz Internship programme</span
+              >
+              <svg
+                class="w-5 h-5 transition-transform duration-300 transform rotate-0"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                id="icon-0"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              id="content-0"
+              class="hidden overflow-hidden transition-max-height duration-300"
+            >
+              <p class="px-4 py-2 text-white">
+                The Cognifyz Technologies Internship Program is a structured
+                learning experience designed to provide students and individuals
+                with hands-on exposure to real-world projects in the fields of
+                technology, software development, and related areas.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion Item 2 -->
+          <div class="mb-2 border-b">
+            <button
+              class="w-full flex justify-between items-center py-2 px-4 focus:outline-none hover:bg-pink-500"
+              onclick="toggleAccordion(1)"
+            >
+              <span class="text-lg font-medium"
+                >What is the duration of the Internship</span
+              >
+              <svg
+                class="w-5 h-5 transition-transform duration-300 transform rotate-0"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                id="icon-1"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              id="content-1"
+              class="hidden overflow-hidden transition-max-height duration-300"
+            >
+              <p class="px-4 py-2 text-white">
+                The duration of the internship is specified in the internship
+                offer letter provided to selected candidates. It varies
+                depending on the nature of the internship.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion Item 3 -->
+          <div class="mb-2 border-b">
+            <button
+              class="w-full flex justify-between items-center py-2 px-4 focus:outline-none hover:bg-pink-500"
+              onclick="toggleAccordion(2)"
+            >
+              <span class="text-lg font-medium">Benfits of the Intership</span>
+              <svg
+                class="w-5 h-5 transition-transform duration-300 transform rotate-0"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                id="icon-2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              id="content-2"
+              class="hidden overflow-hidden transition-max-height duration-300"
+            >
+              <p class="px-4 py-2 text-white">
+                You get hands on experinced in real world tools and tech . A
+                mentor to guide
+              </p>
+            </div>
+          </div>
+          <!-- Accordian Item 4 -->
+          <div class="mb-2 border-b">
+            <button
+              class="w-full flex justify-between items-center py-2 px-4 focus:outline-none hover:bg-pink-500"
+              onclick="toggleAccordion(3)"
+            >
+              <span class="text-lg font-medium"
+                >Desiared Skills and Technologies</span
+              >
+              <svg
+                class="w-5 h-5 transition-transform duration-300 transform rotate-0"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                id="icon-2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              id="content-3"
+              class="hidden overflow-hidden transition-max-height duration-300"
+            >
+              <p class="px-4 py-2">
+                Good Foundation of HTML , CSS , Javascript . For
+                frontend-development lib/framework like ReactJS , Angular .
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function toggleAccordion(index) {
+      const content = document.getElementById(`content-${index}`);
+      const icon = document.getElementById(`icon-${index}`);
+
+      if (content.classList.contains("hidden")) {
+        content.classList.remove("hidden");
+        icon.classList.add("rotate-180");
+      } else {
+        content.classList.add("hidden");
+        icon.classList.remove("rotate-180");
+      }
+    }
+  </script>
+</html>
